@@ -56,7 +56,7 @@ website_route_rules = [
 # Generators
 # ----------
 
-# automatically create page for each record of this doctype
+# automatically create page for each record of this doctyp
 # website_generators = ["Web Page"]
 
 # Installation
@@ -65,7 +65,7 @@ website_route_rules = [
 # before_install = "wiki.install.before_install"
 after_install = "wiki.install.after_install"
 
-after_migrate = ["wiki.wiki.doctype.wiki_page.search.rebuild_index_in_background"]
+after_migrate = ["wiki.wiki.doctype.wiki_page.search.rebuild_index_in_background", "wiki.install.add_default_translate", "wiki.install.add_wiki_page"]
 
 # Desk Notifications
 # ------------------
