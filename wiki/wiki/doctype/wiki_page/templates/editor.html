@@ -113,7 +113,8 @@
                         <input type="text" id="link" name="link">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" data-modal-button="link" class="btn btn-primary btn-sm" data-dismiss="modal">Add
+                        <button type="button" data-modal-button="link" class="btn btn-primary btn-sm"
+                            data-dismiss="modal">Add
                             Link</button>
                     </div>
                 </div>
@@ -196,17 +197,18 @@
         </div>
     </div>
     <div class="wiki-edit-control-btn hide">
-        <div class="btn btn-secondary discard-edit-btn btn-sm" data-new="false">Discard</div>
+        <div class="btn btn-secondary discard-edit-btn btn-sm" data-new="false">{{ _('Discard') }}</div>
         <div class="btn-group">
-            <div type="button" class="btn btn-primary save-wiki-page-btn btn-sm" data-tiptap-button="saveWikiPage">Save
+            <div type="button" class="btn btn-primary save-wiki-page-btn btn-sm" data-tiptap-button="saveWikiPage">
+                {{ _('Save') }}
             </div>
             <div type="button" class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="sr-only">Toggle Dropdown</span>
+                <span class="sr-only">{{ _('Toggle Dropdown') }}</span>
             </div>
             <div class="dropdown-menu" aria-labelledby="saveDropdownMenuButton">
-                <a href="#" class="dropdown-item" data-tiptap-button="saveWikiPage">Save</a>
-                <a href="#" class="dropdown-item" data-tiptap-button="draftWikiPage">Draft</a>
+                <a href="#" class="dropdown-item" data-tiptap-button="saveWikiPage">{{ _('Save') }}</a>
+                <a href="#" class="dropdown-item" data-tiptap-button="draftWikiPage">{{ _('Draft') }}</a>
             </div>
         </div>
     </div>

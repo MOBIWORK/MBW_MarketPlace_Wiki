@@ -17,14 +17,15 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="addGroupModalTitle">{{__('Title')}}</h5>
+				<h5 class="modal-title" id="addGroupModalTitle">{{_('Title')}}</h5>
 			</div>
 			<div class="modal-body">
 				<span class="text-muted text-xs">{{_('Enter title for the new Wiki Group')}}</span>
 				<input type="text" id="title" name="title">
 			</div>
 			<div class="modal-footer">
-				<button class="add-group-btn btn btn-primary btn-sm" type="button" data-dismiss="modal">{{_('Submit')}}</button>
+				<button class="add-group-btn btn btn-primary btn-sm" type="button"
+					data-dismiss="modal">{{_('Submit')}}</button>
 			</div>
 		</div>
 	</div>
@@ -34,18 +35,20 @@
 	{%- if show_feedback -%}
 	<div class="flex mt-4">
 		<span class="text-sm d-none d-sm-block">{{_('Was this article helpful')}}?</span>
-		<span class="text-sm ml-2 feedback-btn" data-toggle="modal" data-target="#feedbackModal">{{_('Give Feedback')}}</span>
+		<span class="text-sm ml-2 feedback-btn" data-toggle="modal" data-target="#feedbackModal">{{_('Give
+			Feedback')}}</span>
 	</div>
 	{% include "wiki/doctype/wiki_page/templates/feedback.html" %}
 	{%- endif -%}
 
 	{%- if last_revision -%}
 	<div class="user-contributions" data-date="{{ last_revision.modified }}">
+		{{ _("last updated") }} {{ frappe.utils.pretty_date(last_revision.modified) }}
 	</div>
 	{%- endif -%}
 	<div class="dropdown">
-		<div class="dropdown-toggle wiki-options" type="button" role="button" id="wikiOptionsButton" data-toggle="dropdown"
-			aria-label="Wiki Option Button" aria-expanded="false">
+		<div class="dropdown-toggle wiki-options" type="button" role="button" id="wikiOptionsButton"
+			data-toggle="dropdown" aria-label="Wiki Option Button" aria-expanded="false">
 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
 				stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
 				class="feather feather-more-vertical">
@@ -60,8 +63,7 @@
 			<a class="dropdown-item show-revisions" href="#" data-toggle="modal" data-target="#revisionsModal">
 				{{_('Revisions')}}
 			</a>
-			<a class="dropdown-item show-page-settings" href="#" data-toggle="modal"
-				data-target="#pageSettingsModal">
+			<a class="dropdown-item show-page-settings" href="#" data-toggle="modal" data-target="#pageSettingsModal">
 				{{_('Page Settings')}}
 			</a>
 		</div>
