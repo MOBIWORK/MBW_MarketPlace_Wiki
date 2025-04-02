@@ -22,6 +22,7 @@ from frappe.website.doctype.website_settings.website_settings import modify_head
 from frappe.website.website_generator import WebsiteGenerator
 
 from wiki.wiki.doctype.wiki_page.search import remove_index, update_index
+from wiki.api import get_language
 
 
 class WikiPage(WebsiteGenerator):
@@ -215,7 +216,10 @@ class WikiPage(WebsiteGenerator):
 
     def get_context(self, context):
         args = frappe.request.args
-        lang = args.get('lang') or 'vi'
+        lang = args.get('lang')
+        if not lang and frappe.session.user != "Guest":
+            lang = get_language()
+        lang = lang or 'vi'
         frappe.local.lang = lang
         self.verify_permission("read")
         self.set_breadcrumbs(context)

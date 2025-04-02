@@ -6,6 +6,7 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 from frappe.utils import md_to_html, pretty_date
+from wiki.api import get_language
 
 
 class WikiPageRevision(Document):
@@ -13,7 +14,10 @@ class WikiPageRevision(Document):
 
 
 @frappe.whitelist(allow_guest=True)
-def get_revisions(wiki_page_name, lang='vi'):
+def get_revisions(wiki_page_name, lang=None):
+    if not lang and frappe.session.user != "Guest":
+        lang = get_language()
+    lang = lang or 'vi'
     frappe.local.lang = lang
     revisions = frappe.db.get_all(
         "Wiki Page Revision",

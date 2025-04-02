@@ -423,7 +423,7 @@ window.RenderWiki = class RenderWiki extends Wiki {
           "wiki.wiki.doctype.wiki_page_revision.wiki_page_revision.get_revisions",
         args: {
           wiki_page_name: $('[name="wiki-page-name"]').val(),
-          lang: localStorage.getItem("lang") || "vi",
+          lang: localStorage.getItem("lang"),
         },
         callback: (r) => {
           revisions = r.message;
